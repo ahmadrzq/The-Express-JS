@@ -1,8 +1,11 @@
 const Express = require('express')
 const App = Express()
 const PORT = 5000
+const Cors = require('cors')
 const Routes = require('./routes/routes')
 const DataUser = require('./data')
+
+App.use(Cors())
 
 // Routes
 App.use('/hello', Routes)
