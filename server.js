@@ -2,6 +2,7 @@ const Express = require('express')
 const App = Express()
 const PORT = 5000
 const Routes = require('./routes/routes')
+const DataUser = require('./data')
 
 // Routes
 App.use('/hello', Routes)
@@ -18,8 +19,6 @@ Routes.get("/users", function(req,res) {
 	const {id } = req.query
 	// console.log(id )
 	res.status(200).send({
-		data: [
-			{name: 'Ahmad', age: 23}
-		]
+		data: DataUser
 	})
 })
